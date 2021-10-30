@@ -6,15 +6,14 @@
 
 int main()
 {
-    //debugging led
-    stdio_init_all();
-    //TODO
-    //SNES connections.
-    const uint8_t latch_pin = 17; // output GPIO22
-    const uint8_t data_pin = 3;  // input GPIO5
-    const uint8_t clk_pin = 16;   // output GPIO21
+    stdio_init_all();  //enable Serial comms
 
-    uint8_t buttons[NUM_BUTTONS];
+    //SNES connections.
+    const uint8_t latch_pin = 20; // output GPIO22
+    const uint8_t data_pin = 26;  // input GPIO5
+    const uint8_t clk_pin = 27;   // output GPIO21
+
+    uint8_t buttons[NUM_BUTTONS]; //array for storing button values
     snes_controller_init(latch_pin, data_pin, clk_pin);
     while (true)
     {
